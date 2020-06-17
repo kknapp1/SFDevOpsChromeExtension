@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+  
+    "name": "Salesforce DevOps Tools",
+    "description": "Some Salesforce utilities I find helpful",
+    "version": "1.0",
+  
+    "browser_action": {
+     "default_icon": "icon.png",
+     "default_popup": "popup.html"
+    },
+    "content_scripts": [ 
+        { 
+            "js": [ "jquery-3.5.1.min.js", "background.js" ],
+             "matches": [ "http://*/*", "https://*/*"]
+         }
+     ],
+    "permissions": [
+     "activeTab","declartiveContent"
+     ]
+  }
