@@ -11,3 +11,18 @@ function buildJsonElement(element){
     retval += ',';    
     return retval;
 }
+
+console.log('attempting to create DataTable');
+jQuery("table[id*='sandboxTable']").DataTable({
+    paging: false,
+    "order": [[ 1, "asc" ]], // default sort by Name
+    "columnDefs": [
+        { "orderable": false, "targets": [0,5,7] } //don't sort Actions,OrgID,Description        
+      ]
+});
+
+
+function formatDateString(currentDate){
+    let m = new moment(currentDate);
+    return m.format('YYYY-MM-DD');
+}
